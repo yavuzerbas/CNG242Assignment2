@@ -93,20 +93,24 @@ void Vaccine::setEUA_date(char* EUA_date)
 
 void Vaccine::setNumberofDosesNeeded(int numberofDoses)
 {
-	this->numberofDosesNeeded = numberofDoses;
+	if(numberofDoses >= 0)
+		this->numberofDosesNeeded = numberofDoses;
 }
 
 void Vaccine::setTimeBetweenDoses(int timeBetweenDoses)
 {
-	this->timeBetweenDoses = timeBetweenDoses;
+	if(timeBetweenDoses >= 0)
+		this->timeBetweenDoses = timeBetweenDoses;
 }
 
 void Vaccine::setCost(float cost) 
 {
-	this->cost = cost;
+	if(cost >= 0)
+		this->cost = cost;
 }
 
 void Vaccine::setEfficacy(double efficacy)
 {
-	this->efficacy = efficacy;
+	if(efficacy >= 0)
+		this->efficacy = efficacy;
 }
