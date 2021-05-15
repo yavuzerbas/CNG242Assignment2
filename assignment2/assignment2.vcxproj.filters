@@ -21,9 +21,15 @@
     <ClCompile Include="Vaccine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mRNA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vaccine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mRNA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="assignment2.cpp" />
+    <ClCompile Include="mRNA.cpp" />
     <ClCompile Include="Vaccine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mRNA.h" />
     <ClInclude Include="Vaccine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
