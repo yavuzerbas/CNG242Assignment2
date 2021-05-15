@@ -141,13 +141,13 @@
   <ItemGroup>
     <ClCompile Include="AdenovirusBased.cpp" />
     <ClCompile Include="assignment2.cpp" />
-    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="Inactivated.cpp" />
     <ClCompile Include="mRNA.cpp" />
     <ClCompile Include="Vaccine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdenovirusBased.h" />
-    <ClInclude Include="Helper.h" />
+    <ClInclude Include="Inactivated.h" />
     <ClInclude Include="mRNA.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Vaccine.h" />
