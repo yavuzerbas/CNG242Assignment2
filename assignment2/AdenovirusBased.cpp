@@ -2,7 +2,7 @@
 #include "iostream"
 
 AdenovirusBased::AdenovirusBased() {
-	sideEffect = None;
+	sideEffect = Non;
 	discountRate = 0.0;
 }
 

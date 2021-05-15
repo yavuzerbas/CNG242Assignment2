@@ -2,7 +2,7 @@
 class AdenovirusBased
 {
 public:
-	enum SideEffect { None, BloodClots, Headache, Stomachache };
+	enum SideEffect { Non, BloodClots, Headache, Stomachache };
 	AdenovirusBased();
 	SideEffect getSideEffect();
 	double getDiscountRate();
