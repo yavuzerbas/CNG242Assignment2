@@ -139,13 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdenovirusBased.cpp" />
     <ClCompile Include="assignment2.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="mRNA.cpp" />
     <ClCompile Include="Vaccine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdenovirusBased.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="mRNA.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Vaccine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="assignment2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

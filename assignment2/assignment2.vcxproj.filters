@@ -24,6 +24,12 @@
     <ClCompile Include="mRNA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdenovirusBased.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vaccine.h">
@@ -32,5 +38,19 @@
     <ClInclude Include="mRNA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AdenovirusBased.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="assignment2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
