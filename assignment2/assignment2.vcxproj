@@ -144,6 +144,7 @@
     <ClCompile Include="Batch.cpp" />
     <ClCompile Include="Inactivated.cpp" />
     <ClCompile Include="mRNA.cpp" />
+    <ClCompile Include="VaccinationCenter.cpp" />
     <ClCompile Include="Vaccine.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="Inactivated.h" />
     <ClInclude Include="mRNA.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="VaccinationCenter.h" />
     <ClInclude Include="Vaccine.h" />
   </ItemGroup>
   <ItemGroup>
