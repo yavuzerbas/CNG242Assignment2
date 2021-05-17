@@ -30,6 +30,9 @@
     <ClCompile Include="Inactivated.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Batch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vaccine.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Inactivated.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Batch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
