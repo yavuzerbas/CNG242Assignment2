@@ -10,8 +10,8 @@ public:
 	Batch();
 	
 	int getBatchID();
-	Vaccine getVaccines();
+	Vaccine * getVaccines();
 	void setBatchID(int);
-	void setVaccines(Vaccine**);
+	void setVaccines(Vaccine*);
 };
 
