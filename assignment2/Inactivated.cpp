@@ -3,7 +3,7 @@
 
 Inactivated::Inactivated() {
 	this->mililitres = 0.0;
-	this->inactivatedType = WeakenedCOV19;
+	this->inactivatedType = InactivatedType::WeakenedCOV19;
 }
 
 Inactivated::InactivatedType Inactivated::getInactivatedType() {

@@ -2,7 +2,7 @@
 class Inactivated
 {
 public:
-	enum InactivatedType { SarsCOV2, WeakenedCOV19 };
+	enum class InactivatedType { SarsCOV2, WeakenedCOV19 };
 private:
 	InactivatedType inactivatedType;
 	double mililitres;
