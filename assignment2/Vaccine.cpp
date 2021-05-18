@@ -1,9 +1,20 @@
 #include "Vaccine.h"
+#include "MyDate.h"
+
+int Vaccine::lastID = 0;
 
 //Constructors
 
 Vaccine::Vaccine()
 {
+	this->vaccineID = lastID + 1;
+	lastID++;
+	this->vaccineName = new char(20);
+	vaccineName[0] = 'a';
+	vaccineName[1] = 'b';
+	vaccineName[2] = 'c';
+	vaccineName[3] = '\0';
+	this->EUA_date = new MyDate();
 
 }
 
@@ -34,7 +45,7 @@ char* Vaccine::getTelephoneNumber()
 	return this->telephoneNumber;
 }
 
-char* Vaccine::getEUA_date()
+MyDate* Vaccine::getEUA_date()
 {
 	return this->EUA_date;
 }
@@ -86,7 +97,7 @@ void Vaccine::setTelephoneNumber(char* telephoneNumber)
 	this->telephoneNumber = telephoneNumber;
 }
 
-void Vaccine::setEUA_date(char* EUA_date)
+void Vaccine::setEUA_date(MyDate* EUA_date)
 {
 	this->EUA_date = EUA_date;
 }

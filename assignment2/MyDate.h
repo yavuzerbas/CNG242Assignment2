@@ -1,13 +1,13 @@
 #pragma once
-class Date
+class MyDate
 {
 private:
 	int day;
 	int month;
 	int year;
 public:
-	Date();
-	Date(int, int, int);
+	MyDate();
+	MyDate(int, int, int);
 
 	int getDay();
 	int getMonth();

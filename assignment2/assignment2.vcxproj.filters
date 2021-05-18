@@ -36,7 +36,7 @@
     <ClCompile Include="VaccinationCenter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Date.cpp">
+    <ClCompile Include="MyDate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClInclude Include="VaccinationCenter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Date.h">
+    <ClInclude Include="MyDate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

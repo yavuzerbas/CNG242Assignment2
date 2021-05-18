@@ -1,14 +1,16 @@
 #pragma once
+#include "MyDate.h"
 
 class Vaccine
 {
+	static int lastID;
 private:
 	int vaccineID;
 	char* vaccineName;
 	char* producerCompany;
 	char* originCountry;
 	char* telephoneNumber;
-	char* EUA_date;
+	MyDate* EUA_date;
 	int numberofDosesNeeded;
 	int timeBetweenDoses;
 	float cost;
@@ -20,7 +22,7 @@ public:
 	char* getProducerCompany();
 	char* getOriginCountry();
 	char* getTelephoneNumber();
-	char* getEUA_date();
+	MyDate* getEUA_date();
 	int getNumberofDosesNeeded();
 	int getTimeBetweenDoses();
 	float getCost();
@@ -31,7 +33,7 @@ public:
 	void setProducerCompany(char*);
 	void setOriginCountry(char*);
 	void setTelephoneNumber(char*);
-	void setEUA_date(char*);
+	void setEUA_date(MyDate*);
 	void setNumberofDosesNeeded(int);
 	void setTimeBetweenDoses(int);
 	void setCost(float);

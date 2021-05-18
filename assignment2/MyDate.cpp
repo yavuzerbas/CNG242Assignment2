@@ -1,13 +1,13 @@
-#include "Date.h"
+#include "MyDate.h"
 #include <iostream>
 
-Date::Date() {
+MyDate::MyDate() {
 	this->day = 1;
 	this->month = 1;
 	this->year = 2000;
 }
 
-Date::Date(int day, int month, int year) {
+MyDate::MyDate(int day, int month, int year) {
 	if ((day > 0) && (day <= 31)) {
 		this->day = day;
 	}
@@ -25,22 +25,22 @@ Date::Date(int day, int month, int year) {
 	this->year = year;
 }
 
-int Date::getDay() {
+int MyDate::getDay() {
 
 	return this->day;
 }
 
-int Date::getMonth() {
+int MyDate::getMonth() {
 
 	return this->month;
 }
 
-int Date::getYear(){
+int MyDate::getYear(){
 
 	return this->year;
 }
 
-void Date::setDay(int day) {
+void MyDate::setDay(int day) {
 	if ((day > 0) && (day <= 31)) {
 		this->day = day;
 	}
@@ -50,7 +50,7 @@ void Date::setDay(int day) {
 	}
 }
 
-void Date::setMonth(int month) {
+void MyDate::setMonth(int month) {
 	if ((month > 0) && (month < 13)) {
 		this->month = month;
 	}
@@ -60,7 +60,7 @@ void Date::setMonth(int month) {
 	}
 }
 
-void Date::setYear(int year) {
+void MyDate::setYear(int year) {
 
 	this->year = year;
 }
