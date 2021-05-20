@@ -1,24 +1,59 @@
 #include "Vaccine.h"
 #include "MyDate.h"
+#include "MyString.h"
+#include <iostream>
 
-int Vaccine::lastID = 0;
+int Vaccine::last_index = 0;
+int Vaccine::ids[1000] = {};
 
 //Constructors
 
 Vaccine::Vaccine()
 {
-	this->vaccineID = lastID + 1;
-	lastID++;
-	this->vaccineName = new char(20);
-	vaccineName[0] = 'a';
-	vaccineName[1] = 'b';
-	vaccineName[2] = 'c';
-	vaccineName[3] = '\0';
+	this->vaccineID = auto_id(1);
+
+	this->vaccineName = new char[100];
+	strcpy(vaccineName, "default vaccine name");
+	
+	this->producerCompany = new char[100];
+	strcpy(this->producerCompany, "default producer company");
+	
+	this->originCountry = new char[100];
+	strcpy(this->originCountry, "default origin country");
+
+	this->telephoneNumber = new char[100];
+	strcpy(this->originCountry, "default telephone number");
+
 	this->EUA_date = new MyDate();
 
+	this->numberofDosesNeeded = 0;
+	this->timeBetweenDoses = 0;
+	this->cost = 0.0;
+	this->efficacy = 0.0;
 }
 
-//Getters
+Vaccine::Vaccine(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber
+	, MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy)
+{
+	this->vaccineID = vaccineID;
+	ids[last_index] = vaccineID;
+	last_index++;
+	this->vaccineName = new char[100];
+	this->producerCompany = new char[100];
+	this->originCountry = new char[100];
+	this->telephoneNumber = new char[100];
+	strcpy(this->vaccineName, vaccineName);
+	strcpy(this->producerCompany, producerCompany);
+	strcpy(this->originCountry, originCountry);
+	strcpy(this->telephoneNumber, telephoneNumber);
+	this->EUA_date = myDate;
+	this->numberofDosesNeeded = numberofDosesNeeded;
+	this->timeBetweenDoses = timeBetweenDoses;
+	this->cost = cost;
+	this->efficacy = efficacy;
+}
+
+// Getters
 
 int Vaccine::getVaccineID()
 {
@@ -124,4 +159,27 @@ void Vaccine::setEfficacy(double efficacy)
 {
 	if(efficacy >= 0)
 		this->efficacy = efficacy;
+}
+
+//functions to create "automatic id" and "checking if id exists"
+
+int Vaccine::id_location_find(int id)
+{
+	for (int i = 0; i < last_index; i++) {
+		if (ids[i] == id) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+int Vaccine::auto_id(int id) {
+	if (id_location_find(id) == -1) {
+		ids[last_index] = id;
+		last_index++;
+		return id;
+	}
+	else {
+		auto_id(id + 1);
+	}
 }

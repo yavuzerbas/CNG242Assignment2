@@ -3,7 +3,6 @@
 
 class Vaccine
 {
-	static int lastID;
 private:
 	int vaccineID;
 	char* vaccineName;
@@ -16,7 +15,10 @@ private:
 	float cost;
 	double efficacy;
 public:
+	static int last_index;
+	static int ids[1000];
 	Vaccine();
+	Vaccine(int, char*, char*, char*, char*, MyDate*, int, int, float, double);
 	int getVaccineID();
 	char* getVaccineName();
 	char* getProducerCompany();
@@ -38,6 +40,7 @@ public:
 	void setTimeBetweenDoses(int);
 	void setCost(float);
 	void setEfficacy(double);
-
+	int id_location_find(int);
+	int auto_id(int);
 };
 
