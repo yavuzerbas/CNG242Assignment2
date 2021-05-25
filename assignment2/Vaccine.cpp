@@ -1,15 +1,19 @@
+/* Yavuz Erbas – 2243426
+I read and accept the submission rules and the extra rules specified in each question. This is my
+own work that is done by myself only */
 #include "Vaccine.h"
 #include "MyDate.h"
-#include "MyString.h"
 #include <iostream>
 
 int Vaccine::last_index = 0;
 int Vaccine::ids[1000] = {};
 
 //Constructors
+using std::cout;
 
 Vaccine::Vaccine()
 {
+	nextVaccine = NULL;
 	this->vaccineID = auto_id(1);
 
 	this->vaccineName = new char[100];
@@ -32,9 +36,35 @@ Vaccine::Vaccine()
 	this->efficacy = 0.0;
 }
 
+Vaccine::Vaccine(char* vaccineName)
+{
+	nextVaccine = NULL;
+	this->vaccineID = auto_id(1);
+
+	strcpy(this->vaccineName, vaccineName);
+
+	this->producerCompany = new char[100];
+	strcpy(this->producerCompany, "default producer company");
+
+	this->originCountry = new char[100];
+	strcpy(this->originCountry, "default origin country");
+
+	this->telephoneNumber = new char[100];
+	strcpy(this->originCountry, "default telephone number");
+
+	this->EUA_date = new MyDate();
+
+	this->numberofDosesNeeded = 0;
+	this->timeBetweenDoses = 0;
+	this->cost = 0.0;
+	this->efficacy = 0.0;
+
+}
+
 Vaccine::Vaccine(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber
 	, MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy)
 {
+	nextVaccine = NULL;
 	this->vaccineID = vaccineID;
 	ids[last_index] = vaccineID;
 	last_index++;
@@ -54,6 +84,11 @@ Vaccine::Vaccine(int vaccineID, char* vaccineName, char* producerCompany, char* 
 }
 
 // Getters
+
+Vaccine* Vaccine::getNextVaccine()
+{
+	return this->nextVaccine;
+}
 
 int Vaccine::getVaccineID()
 {
@@ -107,6 +142,11 @@ double Vaccine::getEfficacy()
 
 //Setters
 
+void Vaccine::setNextVaccine(Vaccine* nextVaccine)
+{
+	this->nextVaccine = nextVaccine;
+}
+
 void Vaccine::setVaccineID(int vaccineID)
 {
 	this->vaccineID = vaccineID;
@@ -157,8 +197,12 @@ void Vaccine::setCost(float cost)
 
 void Vaccine::setEfficacy(double efficacy)
 {
-	if(efficacy >= 0)
+	if (efficacy >= 0 && efficacy <= 100) {
 		this->efficacy = efficacy;
+	}
+	else {
+		cout << "\nInvalid efficacy value!\n";
+	}
 }
 
 //functions to create "automatic id" and "checking if id exists"
@@ -183,3 +227,29 @@ int Vaccine::auto_id(int id) {
 		auto_id(id + 1);
 	}
 }
+
+void Vaccine::printVaccine(Vaccine* vaccine)
+{
+	if (vaccine == NULL) {
+		cout << "\nThe vaccine doesn't exist!\n";
+	}
+	else {
+		cout << "Type:" << vaccine->getVaccineName() << "\n"
+			<< "Vaccine ID:" << vaccine->getVaccineID() << "\n";
+			//...
+	}
+}
+
+void Vaccine::addVaccineList(Vaccine* head, Vaccine* newVaccine)
+{
+	Vaccine* traversal = head;
+	while (traversal->nextVaccine != NULL) {
+		traversal = traversal->nextVaccine;
+	}
+	traversal->nextVaccine = newVaccine;
+
+}
+
+
+
+

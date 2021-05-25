@@ -1,7 +1,12 @@
+/* Yavuz Erbas – 2243426
+I read and accept the submission rules and the extra rules specified in each question. This is my
+own work that is done by myself only */
 #include <iostream>
 #include "Vaccine.h"
-#include "MyString.h"
-#include "assignment2.h"
+#include "mRNA.h"
+#include "Inactivated.h"
+#include "AdenovirusBased.h"
+
 
 using std::cout;
 using std::cin;
@@ -35,20 +40,27 @@ int main()
     cout << vaccine4->getVaccineName() << "\n";
     cout << "vaccine5 id: " << vaccine5->getVaccineID() << "\n";
     cout << vaccine5->getVaccineName() << "\n";
-    /*
-    char* name = new char[20];
-    cin >> name;
-    char* name2 = new char[20];
-    MyString::myStrcpy(name2, name);
-    int x = 3;
-    cout << "myStrcpy result:" << name2;
-    //cout << "\nname length: " << MyString::myLength(name);
-    //cout << "\nname2 length: " << MyString::myLength(name2);
-    
-    char* name = new char[100];
-    strcpy(name, "not provided");
-    cout << name;
-    */
 
+    cout << "---------------------------------\n\n";
+
+    mRNA* myMRNA = new mRNA();
+    cout << "mRNA:" << myMRNA->getVaccineName() << "  ,mRNA temperature: " << myMRNA->getStorageTemperature() <<"\n";
+    mRNA* my_mRNA = new mRNA(10, vaccineName, producerCompany, originCountry, telephoneNumber,
+        new MyDate(), 10, 15, 1000, 90.0, -20, 20);
+    cout << "mRNA:" << my_mRNA->getVaccineName() << "  ,mRNA temperature: " << my_mRNA->getStorageTemperature() << "\n";
+    cout << "---------------------------------\n\n";
+    Inactivated::InactivatedType inactivated2 = Inactivated::InactivatedType::WeakenedCOV19;
+    Inactivated* inactivated = new Inactivated(21, vaccineName, producerCompany, originCountry, telephoneNumber,
+        new MyDate(), 3, 30,
+        305.3, 85.0,inactivated2,2.0);
+    cout << "Inactivated:" << inactivated->getVaccineName() << "    ,inactivated type: " << inactivated->getInactivatedTypeName() << "\n";
+    cout << "---------------------------------\n\n";
+    AdenovirusBased* adenovirusBased = new AdenovirusBased();
+    cout << "AdenovirusBased(default construct) name:" << adenovirusBased->getVaccineName() << "    ,Adenovirus type: " << adenovirusBased->getSideEffectName() << "\n";
+    AdenovirusBased::SideEffect sideEffect = AdenovirusBased::SideEffect::BloodClots;
+    AdenovirusBased* adenovirusBased2 = new AdenovirusBased(21, vaccineName, producerCompany, originCountry, telephoneNumber,
+        new MyDate(), 3, 30,
+        305.3, 85.0, sideEffect, 5.0);
+    cout << "AdenovirusBased(custom construct) name:" << adenovirusBased2->getVaccineName() << "    ,Adenovirus type: " << adenovirusBased2->getSideEffectName() << "\n";
     return 0;
 }

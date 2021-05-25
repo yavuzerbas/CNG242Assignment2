@@ -1,13 +1,39 @@
+/* Yavuz Erbas – 2243426
+I read and accept the submission rules and the extra rules specified in each question. This is my
+own work that is done by myself only */
 #include "AdenovirusBased.h"
-#include "iostream"
 
 AdenovirusBased::AdenovirusBased() {
-	sideEffect = Non;
+	sideEffect = SideEffect::Non;
 	discountRate = 0.0;
 }
 
 AdenovirusBased::SideEffect AdenovirusBased::getSideEffect() {
 	return this->sideEffect;
+}
+
+char* AdenovirusBased::getSideEffectName()//returning sideEffect as string
+{
+	char* sideEffect = new char[20];
+	if (this->sideEffect == SideEffect::Non) {
+		strcpy(sideEffect, "Non");
+		return sideEffect;
+	}
+	else if (this->sideEffect == SideEffect::BloodClots) {
+		strcpy(sideEffect, "BloodClots");
+		return sideEffect;
+	}
+	else if (this->sideEffect == SideEffect::Headache) {
+		strcpy(sideEffect, "Headache");
+		return sideEffect;
+	}
+	else if (this->sideEffect == SideEffect::Stomachache) {
+		strcpy(sideEffect, "Stomachache");
+		return sideEffect;
+	}
+	else {
+		return nullptr;
+	}
 }
 
 double AdenovirusBased::getDiscountRate() {

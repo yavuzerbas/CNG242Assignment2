@@ -145,18 +145,15 @@
     <ClCompile Include="MyDate.cpp" />
     <ClCompile Include="Inactivated.cpp" />
     <ClCompile Include="mRNA.cpp" />
-    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="VaccinationCenter.cpp" />
     <ClCompile Include="Vaccine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdenovirusBased.h" />
-    <ClInclude Include="assignment2.h" />
     <ClInclude Include="Batch.h" />
     <ClInclude Include="MyDate.h" />
     <ClInclude Include="Inactivated.h" />
     <ClInclude Include="mRNA.h" />
-    <ClInclude Include="MyString.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="VaccinationCenter.h" />
     <ClInclude Include="Vaccine.h" />
