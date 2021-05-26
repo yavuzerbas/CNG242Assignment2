@@ -6,21 +6,70 @@ own work that is done by myself only */
 #include "mRNA.h"
 #include "Inactivated.h"
 #include "AdenovirusBased.h"
-
+#include "InputFetch.h"
 
 using std::cout;
 using std::cin;
 
+static char menu() {
+    char menuChoice;
+    char* line = new char[100];
+    cout << "\n1. Create a vaccine\n"
+        << "2. Create a batch\n"
+        << "3. Search a type of vaccine by ID, provide the total number of items in stock\n"
+        << "4. List all types of vaccines and the number of items in stock\n"
+        << "5. List total cost of the stock\n"
+        << "6. List all types in a given batch\n"
+        << "7. List all types of vaccines and the number of them according to their expiry date for a specific batch\n"
+        << "8. Exit: ";
+    cin >> line;
+    menuChoice = line[0];
+    return menuChoice;
+}
+
+
 int main()
 {
+    char menuChoice;
+    MyDate* myDate;
+    Vaccine* vaccineX = new Vaccine();
+    while ((menuChoice = menu()) && (menuChoice != '8')) {
+        switch (menuChoice) {
+        case '1':
+            InputFetch::fetchVaccine();
+            break;
+        case '2':
+            cout << "converted int: " << InputFetch::fetchInt("enter converted(x to exit): ");
+            break;
+        case '3':
+            myDate = InputFetch::fetchDate();
+            if(myDate!= NULL)
+                cout << "Date: " << myDate->getDay() << "/" << myDate->getMonth() << "/" << myDate->getYear() << "\n";
+            break;
+        case '4':
+            vaccineX = InputFetch::fetchVaccine();
+            break;
+        case '5':
+            if(vaccineX != nullptr)
+                cout << vaccineX->getVaccineName() << "\n";
+            break;
+        case '6':
+            cout << menuChoice << "\n";
+            break;
+        case '7':
+            cout << menuChoice << "\n";
+            break;
+
+        }
+    }
     char* vaccineName = new char[100];
     strcpy(vaccineName, "Sputnik");
     char* producerCompany = new char[100];
     strcpy(producerCompany, "Russian company");
     char* originCountry = new char[100];
     strcpy(originCountry, "Russia");
-    char* telephoneNumber = new char[100];
-    strcpy(telephoneNumber, "0533 333 33 33");
+    char* telephoneNumber = new char[30];
+    strcpy(telephoneNumber, "0333 333 33 33");
     
     Vaccine* vaccine = new Vaccine();
     Vaccine* vaccine2 = new Vaccine(4,vaccineName, producerCompany, originCountry, telephoneNumber

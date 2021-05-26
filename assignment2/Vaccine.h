@@ -10,18 +10,13 @@ class Vaccine
 private:
 	Vaccine* nextVaccine;
 	int vaccineID;
-	char* vaccineName;
-	char* producerCompany;
-	char* originCountry;
-	char* telephoneNumber;
+	char* vaccineName, *producerCompany, *originCountry, *telephoneNumber;
 	MyDate* EUA_date;
-	int numberofDosesNeeded;
-	int timeBetweenDoses;
+	int numberofDosesNeeded, timeBetweenDoses;
 	float cost;
 	double efficacy;
 public:
-	static int last_index;
-	static int ids[1000];
+	static int last_index, ids[1000];
 	Vaccine();
 	Vaccine(char*);
 	Vaccine(int, char*, char*, char*, char*, MyDate*, int, int, float, double);
@@ -49,7 +44,7 @@ public:
 	void setTimeBetweenDoses(int);
 	void setCost(float);
 	void setEfficacy(double);
-	int id_location_find(int);
+	static int id_location_find(int);
 	int auto_id(int);
 
 	void printVaccine(Vaccine*);

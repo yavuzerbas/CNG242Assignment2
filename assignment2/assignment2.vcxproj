@@ -140,8 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdenovirusBased.cpp" />
-    <ClCompile Include="assignment2.cpp" />
+    <ClCompile Include="VaccineCenterManagementSystem.cpp" />
     <ClCompile Include="Batch.cpp" />
+    <ClCompile Include="InputFetch.cpp" />
     <ClCompile Include="MyDate.cpp" />
     <ClCompile Include="Inactivated.cpp" />
     <ClCompile Include="mRNA.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="AdenovirusBased.h" />
     <ClInclude Include="Batch.h" />
+    <ClInclude Include="InputFetch.h" />
     <ClInclude Include="MyDate.h" />
     <ClInclude Include="Inactivated.h" />
     <ClInclude Include="mRNA.h" />
