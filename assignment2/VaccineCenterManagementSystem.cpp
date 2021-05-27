@@ -35,12 +35,13 @@ int main()
     char menuChoice;
     MyDate* myDate;
     Vaccine* head = new Vaccine();
-
+    
     InputFetch* inputFetch =  new InputFetch();
     while ((menuChoice = menu()) && (menuChoice != '8')) {
         switch (menuChoice) {
         case '1':
-            Vaccine::addVaccineList(head);
+              //Vaccine::addVaccineList(head);
+            inputFetch->addVaccineList(head);
             break;
         case '2':
             cout << "converted int: " << inputFetch->fetchInt("enter converted(x to exit): ");

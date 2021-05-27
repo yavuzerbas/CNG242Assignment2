@@ -131,6 +131,19 @@ MyDate* InputFetch::fetchDate()
 	return myDate;
 }
 
+void InputFetch::addVaccineList(Vaccine* head)
+{
+	Vaccine* traversal = head;
+	while (traversal->getNextVaccine() != NULL) {
+		traversal = traversal->getNextVaccine();
+	}
+	traversal->setNextVaccine(fetchVaccine());
+}
+
+void InputFetch::addBatchList(Batch*)
+{
+}
+
 Vaccine* InputFetch::fetchVaccine()
 {
 	int vaccineID, vaccineType, numberofDosesNeeded, timeBetweenDoses;

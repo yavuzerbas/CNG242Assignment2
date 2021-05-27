@@ -282,20 +282,20 @@ void Vaccine::printVaccine(Vaccine* vaccine)
 	}
 }
 
-void Vaccine::addVaccineList(Vaccine* head)
-{
-	InputFetch inputFetch;
-	Vaccine* traversal = head;
-	Vaccine* vaccine = inputFetch.fetchVaccine();
-	if (vaccine == NULL) {
-		return;
-	}
-	while (traversal->nextVaccine != NULL) {
-		traversal = traversal->nextVaccine;
-	}
-	traversal->nextVaccine = vaccine;
-
-}
+//void Vaccine::addVaccineList(Vaccine* head)
+//{
+//	InputFetch* inputFetch = new InputFetch();
+//	Vaccine* traversal = head;
+//	Vaccine* vaccine = inputFetch->fetchVaccine();
+//	if (vaccine == NULL) {
+//		return;
+//	}
+//	while (traversal->nextVaccine != NULL) {
+//		traversal = traversal->nextVaccine;
+//	}
+//	traversal->nextVaccine = vaccine;
+//
+//}
 
 
 

@@ -4,7 +4,7 @@ own work that is done by myself only */
 
 #pragma once
 #include "MyDate.h"
-#include "InputFetch.h"
+//#include "InputFetch.h"
 
 class Vaccine
 {
@@ -54,6 +54,6 @@ public:
 	int auto_id(int);
 
 	static void printVaccine(Vaccine*);
-	static void addVaccineList(Vaccine*);
+	//static void addVaccineList(Vaccine*);
 };
 

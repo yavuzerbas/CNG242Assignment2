@@ -108,3 +108,4 @@ int Batch::auto_id(Batch* batches, int id)
 		auto_id(batches, id + 1);
 	}
 }
+
