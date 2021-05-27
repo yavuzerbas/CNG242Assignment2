@@ -13,9 +13,9 @@ public:
 	mRNA();
 	mRNA(int, int);
 	mRNA(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber,
-		MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy, int storageTemperature, int resignTime)
+		MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy, int storageTemperature, int resignTime, int vaccineType)
 		:Vaccine(vaccineID, vaccineName, producerCompany, originCountry, telephoneNumber, 
-		myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy) {
+		myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy, 1) {
 			this->storageTemperature = 10;
 			this->redesignTime = 10;
 	}

@@ -14,9 +14,9 @@ public:
 	Inactivated();
 	Inactivated(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber,
 		MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, 
-		float cost, double efficacy, InactivatedType inactivatedType, double mililitres) :
+		float cost, double efficacy, InactivatedType inactivatedType, double mililitres, int vaccineType) :
 		Vaccine(vaccineID, vaccineName, producerCompany,
-		originCountry, telephoneNumber, myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy) {
+		originCountry, telephoneNumber, myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy, 3) {
 			this->inactivatedType = inactivatedType;
 			this->mililitres = mililitres;
 	}

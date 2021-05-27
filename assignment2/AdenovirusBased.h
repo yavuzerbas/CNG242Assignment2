@@ -15,8 +15,8 @@ public:
 	AdenovirusBased();
 	AdenovirusBased(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber
 		, MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy, SideEffect sideEffect,
-		double discountRate) :Vaccine(vaccineID, vaccineName, producerCompany,
-			originCountry, telephoneNumber, myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy) {
+		double discountRate,int vaccineType) :Vaccine(vaccineID, vaccineName, producerCompany,
+			originCountry, telephoneNumber, myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy, 2) {
 		this->sideEffect = sideEffect;
 		this->discountRate = discountRate;
 	}

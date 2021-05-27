@@ -14,7 +14,7 @@ using std::cout;
 Vaccine::Vaccine()
 {
 	nextVaccine = NULL;
-	this->vaccineID = auto_id(1);
+	this->vaccineID = 0;
 
 	this->vaccineName = new char[100];
 	strcpy(vaccineName, "default vaccine name");
@@ -34,6 +34,7 @@ Vaccine::Vaccine()
 	this->timeBetweenDoses = 0;
 	this->cost = 0.0;
 	this->efficacy = 0.0;
+	this->vaccineType = 0;
 }
 
 Vaccine::Vaccine(char* vaccineName)
@@ -58,6 +59,7 @@ Vaccine::Vaccine(char* vaccineName)
 	this->timeBetweenDoses = 0;
 	this->cost = 0.0;
 	this->efficacy = 0.0;
+	this->vaccineType = 0;
 
 }
 
@@ -81,6 +83,36 @@ Vaccine::Vaccine(int vaccineID, char* vaccineName, char* producerCompany, char* 
 	this->timeBetweenDoses = timeBetweenDoses;
 	this->cost = cost;
 	this->efficacy = efficacy;
+	this->vaccineType = 0;
+}
+
+Vaccine::Vaccine(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber
+	, MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy, int vaccineType)
+{
+	nextVaccine = NULL;
+	this->vaccineID = vaccineID;
+	ids[last_index] = vaccineID;
+	last_index++;
+	this->vaccineName = new char[100];
+	this->producerCompany = new char[100];
+	this->originCountry = new char[100];
+	this->telephoneNumber = new char[100];
+	strcpy(this->vaccineName, vaccineName);
+	strcpy(this->producerCompany, producerCompany);
+	strcpy(this->originCountry, originCountry);
+	strcpy(this->telephoneNumber, telephoneNumber);
+	this->EUA_date = myDate;
+	this->numberofDosesNeeded = numberofDosesNeeded;
+	this->timeBetweenDoses = timeBetweenDoses;
+	this->cost = cost;
+	this->efficacy = efficacy;
+	if (vaccineType > 0 && vaccineType < 4) {
+		this->vaccineType = vaccineType;
+	}
+	else {
+		this->vaccineType = 0; 
+		cout << "Vaccine type is invalid in constructor! \nAuto setted to 0. Please change later in case of instance of another class!\n\n";
+	}
 }
 
 // Getters
@@ -138,6 +170,11 @@ float Vaccine::getCost()
 double Vaccine::getEfficacy()
 {
 	return this->efficacy;
+}
+
+int Vaccine::getVaccineType()
+{
+	return this->vaccineType;
 }
 
 //Setters
@@ -203,6 +240,11 @@ void Vaccine::setEfficacy(double efficacy)
 	else {
 		cout << "\nInvalid efficacy value!\n";
 	}
+}
+
+void Vaccine::setVaccineType(int vaccineType)
+{
+	this->vaccineType = vaccineType;
 }
 
 //functions to create "automatic id" and "checking if id exists"

@@ -8,6 +8,7 @@ own work that is done by myself only */
 class Vaccine
 {
 private:
+	int vaccineType;
 	Vaccine* nextVaccine;
 	int vaccineID;
 	char* vaccineName, *producerCompany, *originCountry, *telephoneNumber;
@@ -20,7 +21,8 @@ public:
 	Vaccine();
 	Vaccine(char*);
 	Vaccine(int, char*, char*, char*, char*, MyDate*, int, int, float, double);
-	
+	Vaccine(int, char*, char*, char*, char*, MyDate*, int, int, float, double,int); // with vaccineType
+
 	Vaccine* getNextVaccine();
 	int getVaccineID();
 	char* getVaccineName();
@@ -32,6 +34,7 @@ public:
 	int getTimeBetweenDoses();
 	float getCost();
 	double getEfficacy();
+	int getVaccineType();
 
 	void setNextVaccine(Vaccine*);
 	void setVaccineID(int);
@@ -44,6 +47,8 @@ public:
 	void setTimeBetweenDoses(int);
 	void setCost(float);
 	void setEfficacy(double);
+	void setVaccineType(int);
+
 	static int id_location_find(int);
 	int auto_id(int);
 
