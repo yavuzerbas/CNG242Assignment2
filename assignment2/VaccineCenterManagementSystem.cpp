@@ -34,12 +34,13 @@ int main()
 {
     char menuChoice;
     MyDate* myDate;
-    Vaccine* vaccineX = new Vaccine();
+    Vaccine* head = new Vaccine();
+
     InputFetch* inputFetch =  new InputFetch();
     while ((menuChoice = menu()) && (menuChoice != '8')) {
         switch (menuChoice) {
         case '1':
-            inputFetch->fetchVaccine();
+            Vaccine::addVaccineList(head);
             break;
         case '2':
             cout << "converted int: " << inputFetch->fetchInt("enter converted(x to exit): ");
@@ -50,19 +51,19 @@ int main()
                 cout << "Date: " << myDate->getDay() << "/" << myDate->getMonth() << "/" << myDate->getYear() << "\n";
             break;
         case '4':
-            vaccineX = inputFetch->fetchVaccine();
-            if (vaccineX != NULL) {
-                cout << vaccineX->getVaccineName() << "\n";
-                if (vaccineX->getVaccineType() == 1) {
+            head = inputFetch->fetchVaccine();
+            if (head != NULL) {
+                cout << head->getVaccineName() << "\n";
+                if (head->getVaccineType() == 1) {
                     cout << "mRNA!\n";
                 }
-                else if (vaccineX->getVaccineType() == 2) {
+                else if (head->getVaccineType() == 2) {
                     cout << "Adevonirus!\n";
                 }
-                else if (vaccineX->getVaccineType() == 3) {
+                else if (head->getVaccineType() == 3) {
                     cout << "Inactivated!\n";
                 }
-                else if (vaccineX->getVaccineType() == 0) {
+                else if (head->getVaccineType() == 0) {
                     cout << "Not inherited vaccine!\n";
                 }
                 else {
@@ -71,8 +72,8 @@ int main()
             }
             break;
         case '5':
-            if(vaccineX != nullptr)
-                cout << vaccineX->getVaccineName() << "\n";
+            if(head != nullptr)
+                cout << head->getVaccineName() << "\n";
             break;
         case '6':
             while (1) {

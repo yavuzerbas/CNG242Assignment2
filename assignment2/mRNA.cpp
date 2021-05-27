@@ -5,7 +5,7 @@ own work that is done by myself only */
 
 mRNA::mRNA() {
 	storageTemperature = 0;
-	redesignTime = 10000;
+	redesignTime = 0;
 }
 
 mRNA::mRNA(int storageTemperature, int redesignTime) {
