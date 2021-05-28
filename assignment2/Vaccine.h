@@ -52,6 +52,7 @@ public:
 
 	static int id_location_find(int);
 	int auto_id(int);
+	static Vaccine* findVaccineWithID(Vaccine*,int);
 
 	static void printVaccine(Vaccine*);
 	//static void addVaccineList(Vaccine*);

@@ -42,6 +42,9 @@
     <ClCompile Include="InputFetch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VaccineInBatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vaccine.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputFetch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VaccineInBatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

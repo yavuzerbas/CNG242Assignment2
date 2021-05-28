@@ -16,7 +16,7 @@ public:
 	Vaccine* fetchVaccine();
 	static Batch* fetchBatch(Batch*);
 	static int fetchInt(const char[]);
-	MyDate* fetchDate();
+	static MyDate* fetchDate();
 	void addVaccineList(Vaccine*);
 	
 

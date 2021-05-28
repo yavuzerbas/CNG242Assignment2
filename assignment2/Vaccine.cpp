@@ -40,7 +40,7 @@ Vaccine::Vaccine()
 Vaccine::Vaccine(char* vaccineName)
 {
 	nextVaccine = NULL;
-	this->vaccineID = auto_id(1);
+	this->vaccineID = 0;
 
 	strcpy(this->vaccineName, vaccineName);
 
@@ -268,6 +268,18 @@ int Vaccine::auto_id(int id) {
 	else {
 		auto_id(id + 1);
 	}
+}
+
+Vaccine* Vaccine::findVaccineWithID(Vaccine* head,int ID)
+{
+	Vaccine* traversal = head;
+	while (traversal->nextVaccine != NULL) {
+		traversal = traversal->nextVaccine;
+		if (traversal->vaccineID == ID) {
+			return traversal;
+		}
+	}
+	return NULL;
 }
 
 void Vaccine::printVaccine(Vaccine* vaccine)

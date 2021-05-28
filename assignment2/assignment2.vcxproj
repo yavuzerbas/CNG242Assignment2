@@ -148,6 +148,7 @@
     <ClCompile Include="mRNA.cpp" />
     <ClCompile Include="VaccinationCenter.cpp" />
     <ClCompile Include="Vaccine.cpp" />
+    <ClCompile Include="VaccineInBatch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdenovirusBased.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="VaccinationCenter.h" />
     <ClInclude Include="Vaccine.h" />
+    <ClInclude Include="VaccineInBatch.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="assignment2.rc" />

@@ -8,15 +8,8 @@ Batch::Batch() {
 	this->batchID = 0;
 	char* name = new char[10];
 	strcpy(name, "head");
-
-	this->mRNA_vaccines = new mRNA();
-	this->mRNA_vaccines->setVaccineName(name);
-
-	this->adenovirusBased_vaccines = new AdenovirusBased();
-	adenovirusBased_vaccines->setVaccineName(name);
-
-	this->inactivated_vaccines = new Inactivated();
-	inactivated_vaccines->setVaccineName(name);
+	this->vaccineInBatch = new VaccineInBatch();
+	this->nextBatch = NULL;
 }
 
 Batch::Batch(int id, Batch* batches)
@@ -28,18 +21,8 @@ Batch::Batch(int id, Batch* batches)
 		this->batchID = auto_id(batches, id+1);
 		cout << "given id to constructor already taken!\nInstead Id:" << this->batchID << "given to batch!\n";
 	}
-
-	char* name = new char[10];
-	strcpy(name, "head");
-
-	this->mRNA_vaccines = new mRNA();
-	this->mRNA_vaccines->setVaccineName(name);
-
-	this->adenovirusBased_vaccines = new AdenovirusBased();
-	adenovirusBased_vaccines->setVaccineName(name);
-
-	this->inactivated_vaccines = new Inactivated();
-	inactivated_vaccines->setVaccineName(name);
+	this->vaccineInBatch = new VaccineInBatch();
+	this->nextBatch = NULL;	
 }
 
 Batch* Batch::getNextBatch()
@@ -52,20 +35,6 @@ int Batch::getBatchID()
 	return this->batchID;
 }
 
-mRNA* Batch::get_mRNA_vaccines(Batch* batch)
-{
-	return this->mRNA_vaccines;
-}
-
-AdenovirusBased* Batch::get_adenovirusBased_vaccines(Batch*)
-{
-	return this->adenovirusBased_vaccines;
-}
-
-Inactivated* Batch::get_inactivated_vaccines(Batch*)
-{
-	return this->inactivated_vaccines;
-}
 
 void Batch::setNextBatch(Batch* batch)
 {
@@ -80,21 +49,6 @@ void Batch::setBatchID(Batch* batches,int batchID)
 	else {
 		cout << "The batch id already exist!\n";
 	}
-}
-
-void Batch::set_mRNA_vaccines(mRNA* mRNA_vaccines)
-{
-	this->mRNA_vaccines = mRNA_vaccines;
-}
-
-void Batch::set_adenovirusBased_vaccines(AdenovirusBased* adenovirusBased_vaccines)
-{
-	this->adenovirusBased_vaccines = adenovirusBased_vaccines;
-}
-
-void Batch::set_inactivated_vaccines(Inactivated* inactivated_vaccines)
-{
-	this->inactivated_vaccines = inactivated_vaccines;
 }
 
 int Batch::is_ID_exist(Batch* batches, int id)

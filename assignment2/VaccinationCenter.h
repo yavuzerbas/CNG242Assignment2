@@ -8,11 +8,12 @@ own work that is done by myself only */
 class VaccinationCenter
 {
 public:
-	void addNewBatch(Batch);
+	VaccinationCenter();
+	void addNewBatch(Batch*);
 	void displayDetailsofVaccine(Vaccine*, int);//vaccines[] ,vaccineID
 	void printTypesofaBatch(Batch);
 	void printCurrentExpenditure();
 	void costofGivenBatch(Batch);
-	void addBatchList(Batch*);
+	void addBatchList(Vaccine*,Batch*,Vaccine*,int);
 };
 
