@@ -7,7 +7,7 @@ own work that is done by myself only */
 #include "Inactivated.h"
 #include "AdenovirusBased.h"
 #include "InputFetch.h"
-
+#include "VaccinationCenter.h"
 using std::cout;
 using std::cin;
 
@@ -34,60 +34,32 @@ int main()
 {
     char menuChoice;
     MyDate* myDate;
-    Vaccine* head = new Vaccine();
+    Vaccine* vaccineHead = new Vaccine();
+    Batch* batchHead = new Batch();
     
     InputFetch* inputFetch =  new InputFetch();
     while ((menuChoice = menu()) && (menuChoice != '8')) {
         switch (menuChoice) {
         case '1':
-              //Vaccine::addVaccineList(head);
-            inputFetch->addVaccineList(head);
+            inputFetch->addVaccineList(vaccineHead);
             break;
         case '2':
-            cout << "converted int: " << inputFetch->fetchInt("enter converted(x to exit): ");
+            InputFetch::fetchBatch(batchHead, vaccineHead);
             break;
         case '3':
-            myDate = inputFetch->fetchDate();
-            if (myDate != NULL)
-                cout << "Date: " << myDate->getDay() << "/" << myDate->getMonth() << "/" << myDate->getYear() << "\n";
+            cout << "\nIncomplete section!!\n\n";
             break;
         case '4':
-            head = inputFetch->fetchVaccine();
-            if (head != NULL) {
-                cout << head->getVaccineName() << "\n";
-                if (head->getVaccineType() == 1) {
-                    cout << "mRNA!\n";
-                }
-                else if (head->getVaccineType() == 2) {
-                    cout << "Adevonirus!\n";
-                }
-                else if (head->getVaccineType() == 3) {
-                    cout << "Inactivated!\n";
-                }
-                else if (head->getVaccineType() == 0) {
-                    cout << "Not inherited vaccine!\n";
-                }
-                else {
-                    cout << "Error vaccine type!!\n";
-                }
-            }
+            cout << "\nIncomplete section!!\n\n";
             break;
         case '5':
-            if(head != nullptr)
-                cout << head->getVaccineName() << "\n";
+            cout << "\nIncomplete section!!\n\n";
             break;
         case '6':
-            while (1) {
-                cout << "number:" << inputFetch->fetchInt("Enter:") << "\n";
-            }
+            cout << "\nIncomplete section!!\n\n";
             break;
         case '7':
-            //cin.ignore();
-            while (1) {
-           
-                char* fetched = inputFetch->fetchString("Enter:");
-                cout << fetched << "\n";
-            }
+            cout << "\nIncomplete section!!\n\n";
             break;
 
         }

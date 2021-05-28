@@ -36,8 +36,8 @@ Vaccine::Vaccine()
 	this->efficacy = 0.0;
 	this->vaccineType = 0;
 }
-
-Vaccine::Vaccine(char* vaccineName)
+/*
+Vaccine::Vaccine(const char vaccineName[])
 {
 	nextVaccine = NULL;
 	this->vaccineID = 0;
@@ -62,7 +62,7 @@ Vaccine::Vaccine(char* vaccineName)
 	this->vaccineType = 0;
 
 }
-
+*/
 Vaccine::Vaccine(int vaccineID, char* vaccineName, char* producerCompany, char* originCountry, char* telephoneNumber
 	, MyDate* myDate, int numberofDosesNeeded, int timeBetweenDoses, float cost, double efficacy)
 {

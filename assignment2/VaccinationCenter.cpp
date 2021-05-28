@@ -7,19 +7,22 @@ VaccinationCenter::VaccinationCenter()
 {
 }
 
-void VaccinationCenter::addBatchList(Vaccine* head,Batch* batchHead,Vaccine* vaccineHead,int batchID)
+void VaccinationCenter::addBatchList(Batch* batchHead,Vaccine* vaccineHead,int batchID)
 {
-	/*
-	Batch* traversal = batchHead;
-	while (traversal->getNextBatch() != NULL) {
-		traversal = traversal->getNextBatch();
-	}
-	traversal->setNextBatch(InputFetch::fetchBatch(batchHead));
-	if (traversal->getNextBatch() == NULL) {//aborted while fetching Batch ID
-		return;
-	}
-	traversal = traversal->getNextBatch();
+	
+	//Batch* traversal = batchHead;
+	//while (traversal->getNextBatch() != NULL) {
+	//	traversal = traversal->getNextBatch();
+	//}
+	//traversal->setNextBatch(InputFetch::fetchBatch(batchHead,vaccineHead));
+	//if (traversal->getNextBatch() == NULL) {//aborted while fetching Batch ID
+	//	return;
+	//}
+	//traversal = traversal->getNextBatch();
+	
 	int key = 1,vaccineID, amount;
+	int firstTimeKey = 1;
+	Batch* newBatch = new Batch(batchID, batchHead);
 	do {
 		vaccineID = InputFetch::fetchInt("Add a vaccine with ID(x to exit)");
 		if (vaccineID == -90000 || vaccineID == -99999) {
@@ -37,14 +40,28 @@ void VaccinationCenter::addBatchList(Vaccine* head,Batch* batchHead,Vaccine* vac
 				if (myDate == NULL) {
 					return;
 				}
-				Vaccine* vaccine = Vaccine::findVaccineWithID(head,vaccineID);
+				Vaccine* vaccine = Vaccine::findVaccineWithID(vaccineHead,vaccineID);
 				if (vaccine == NULL) {
 					cout << "\nUnexpected error 2\n\n";
 					return;
 				}
+				
 				VaccineInBatch* newVaccineInBatch = new VaccineInBatch(vaccine, amount, myDate);
+				newBatch->addVaccineInBatchList(newVaccineInBatch);
 				if (newVaccineInBatch != NULL) {
-					traversal->setVaccineInBatch(newVaccineInBatch);
+					//Batch* traversal = batchHead;
+					//while (traversal->getNextBatch() != NULL) {
+					//	traversal = traversal->getNextBatch();
+					//}
+					//if (firstTimeKey == 1) {
+					//	//newBatch = new Batch(batchID, batchHead);
+					//	traversal->setVaccineInBatch(newVaccineInBatch);
+					//	firstTimeKey = 0;
+					//}
+					
+					
+					/*VaccineInBatch* vaccineInBatchTraversal = newBatch->getVaccineInBatch();
+					traversal->setVaccineInBatch(newVaccineInBatch);*/
 					cout << amount << "Vials of " << vaccine->getVaccineName() << " is added to the batch!\n";
 					char* input = InputFetch::fetchString("Would you like to add anouther vaccine?(Y/N): ");
 					if (input[0] == 'Y' || input[0] == 'y') {
@@ -58,6 +75,7 @@ void VaccinationCenter::addBatchList(Vaccine* head,Batch* batchHead,Vaccine* vac
 					cout << "\nEmpty vaccine in batch!!\n\n";
 					return;
 				}
+				
 			}
 			else {
 				cout << "There isn't any vaccine with ID:" << vaccineID << "!Please enter a valid ID!\n\n";
@@ -65,5 +83,5 @@ void VaccinationCenter::addBatchList(Vaccine* head,Batch* batchHead,Vaccine* vac
 		}
 
 	} while (key);
-	*/
+	
 }

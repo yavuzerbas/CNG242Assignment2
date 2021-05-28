@@ -23,6 +23,7 @@ public:
 	void setNextBatch(Batch*);
 	void setBatchID(Batch*, int);
 	void setVaccineInBatch(VaccineInBatch*);
+	void addVaccineInBatchList(VaccineInBatch*);
 
 	static int is_ID_exist(Batch*, int);
 	static int auto_id(Batch*, int);

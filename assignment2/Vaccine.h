@@ -20,7 +20,7 @@ private:
 public:
 	static int last_index, ids[1000];
 	Vaccine();
-	Vaccine(char*);
+	Vaccine(const char[]);
 	Vaccine(int, char*, char*, char*, char*, MyDate*, int, int, float, double);
 	Vaccine(int, char*, char*, char*, char*, MyDate*, int, int, float, double,int); // with vaccineType
 

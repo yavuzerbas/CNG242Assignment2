@@ -9,11 +9,11 @@ class VaccinationCenter
 {
 public:
 	VaccinationCenter();
-	void addNewBatch(Batch*);
-	void displayDetailsofVaccine(Vaccine*, int);//vaccines[] ,vaccineID
-	void printTypesofaBatch(Batch);
-	void printCurrentExpenditure();
-	void costofGivenBatch(Batch);
-	void addBatchList(Vaccine*,Batch*,Vaccine*,int);
+	//void addNewBatch(Batch*);
+	//void displayDetailsofVaccine(Vaccine*, int);//vaccines[] ,vaccineID
+	//void printTypesofaBatch(Batch);
+	//void printCurrentExpenditure();
+	//void costofGivenBatch(Batch);
+	static void addBatchList(Batch*, Vaccine*, int);
 };
 

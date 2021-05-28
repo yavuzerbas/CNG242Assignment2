@@ -15,7 +15,7 @@ public:
 
 	int getAmount();
 	MyDate* getExpiryDate();
-	VaccineInBatch* getNextVaccineInBatch;
+	VaccineInBatch* getNextVaccineInBatch();
 
 	void setAmount(int);
 	void setExpiryDate(MyDate*);

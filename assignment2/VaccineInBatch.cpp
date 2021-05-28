@@ -2,9 +2,10 @@
 
 VaccineInBatch::VaccineInBatch()
 {
+	this->vaccine = new Vaccine();
 	char* name = new char[20];
 	strcpy(name, "VaccineInBatchHead");
-	this->vaccine = new Vaccine(name);
+	this->vaccine->setVaccineName(name);
 	this->amount = 0;
 	this->expiryDate = NULL;
 	this->nextVaccineInBatch = NULL;
@@ -27,6 +28,11 @@ int VaccineInBatch::getAmount()
 MyDate* VaccineInBatch::getExpiryDate()
 {
 	return this->expiryDate;
+}
+
+VaccineInBatch* VaccineInBatch::getNextVaccineInBatch()
+{
+	return this->nextVaccineInBatch;
 }
 
 void VaccineInBatch::setAmount(int amount)

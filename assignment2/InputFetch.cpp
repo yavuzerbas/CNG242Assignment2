@@ -316,7 +316,7 @@ Vaccine* InputFetch::fetchVaccine()
 	}
 }
 
-Batch* InputFetch::fetchBatch(Batch* head)
+void InputFetch::fetchBatch(Batch* batchHead,Vaccine* vaccineHead)
 {
 	int key = 0;
 	int batchID;
@@ -324,24 +324,23 @@ Batch* InputFetch::fetchBatch(Batch* head)
 		batchID = fetchInt("Enter Batch ID(x to exit): ");
 		if (batchID == -90000 || batchID == -99999) {
 			cout << "\nAborted fetching Batch!\n\n";
-			return NULL;
+			return;
 		}
-		key = Batch::is_ID_exist(head, batchID);
-		if (key != -1) {
-			cout << "There is a batch with ID:" << batchID << "!\nWould you like to add another batch ? (Y / N) :";
+		key = Batch::is_ID_exist(batchHead, batchID);
+		if (key == -1) {
+			cout << "There is a batch with ID:" << batchID << "!\nWould you like to add another batch ? (Y/N) :";
 			char* choice = fetchString("");
 			if (choice[0] == 'Y' || choice[0] == 'y') {
 				key = 1;
 			}
 			else {
 				key = 0;
-				return NULL;
+				return;
 			}
 		}
 		else {
 			key = 0;
 		}
 	} while (key);
-
-	return nullptr;
+	VaccinationCenter::addBatchList(batchHead, vaccineHead, batchID);
 }

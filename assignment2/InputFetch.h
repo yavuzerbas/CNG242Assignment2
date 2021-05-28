@@ -6,6 +6,7 @@
 #include "mRNA.h"
 #include "AdenovirusBased.h"
 #include "Inactivated.h"
+#include "VaccinationCenter.h"
 
 using std::cin;
 using std::cout;
@@ -14,7 +15,7 @@ class InputFetch
 public:
 	static char* fetchString(const char[]);
 	Vaccine* fetchVaccine();
-	static Batch* fetchBatch(Batch*);
+	static void fetchBatch(Batch*, Vaccine*);
 	static int fetchInt(const char[]);
 	static MyDate* fetchDate();
 	void addVaccineList(Vaccine*);
