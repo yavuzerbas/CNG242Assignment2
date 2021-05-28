@@ -42,6 +42,11 @@ Batch::Batch(int id, Batch* batches)
 	inactivated_vaccines->setVaccineName(name);
 }
 
+Batch* Batch::getNextBatch()
+{
+	return this->nextBatch;
+}
+
 int Batch::getBatchID()
 {
 	return this->batchID;
@@ -60,6 +65,11 @@ AdenovirusBased* Batch::get_adenovirusBased_vaccines(Batch*)
 Inactivated* Batch::get_inactivated_vaccines(Batch*)
 {
 	return this->inactivated_vaccines;
+}
+
+void Batch::setNextBatch(Batch* batch)
+{
+	this->nextBatch = batch;
 }
 
 void Batch::setBatchID(Batch* batches,int batchID)

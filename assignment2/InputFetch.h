@@ -12,12 +12,13 @@ using std::cout;
 class InputFetch
 {
 public:
-	char* fetchString(const char[]);
+	static char* fetchString(const char[]);
 	Vaccine* fetchVaccine();
-	int fetchInt(const char[]);
+	static Batch* fetchBatch(Batch*);
+	static int fetchInt(const char[]);
 	MyDate* fetchDate();
 	void addVaccineList(Vaccine*);
-	void addBatchList(Batch*);
+	
 
 	static int getStringSize(char*);
 };

@@ -4,6 +4,7 @@ own work that is done by myself only */
 #pragma once
 #include "Batch.h"
 #include "Vaccine.h"
+#include "InputFetch.h"
 class VaccinationCenter
 {
 public:
@@ -12,5 +13,6 @@ public:
 	void printTypesofaBatch(Batch);
 	void printCurrentExpenditure();
 	void costofGivenBatch(Batch);
+	void addBatchList(Batch*);
 };
 

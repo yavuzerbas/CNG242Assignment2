@@ -140,10 +140,6 @@ void InputFetch::addVaccineList(Vaccine* head)
 	traversal->setNextVaccine(fetchVaccine());
 }
 
-void InputFetch::addBatchList(Batch*)
-{
-}
-
 Vaccine* InputFetch::fetchVaccine()
 {
 	int vaccineID, vaccineType, numberofDosesNeeded, timeBetweenDoses;
@@ -318,4 +314,34 @@ Vaccine* InputFetch::fetchVaccine()
 		return (new Inactivated(vaccineID, vaccineName, producerCompany, originCountry, telephoneNumber,
 			myDate, numberofDosesNeeded, timeBetweenDoses, cost, efficacy, inactivatedType2, mililitres,3));
 	}
+}
+
+Batch* InputFetch::fetchBatch(Batch* head)
+{
+	int key = 0;
+	int batchID;
+	do {
+		batchID = fetchInt("Enter Batch ID(x to exit): ");
+		if (batchID == -90000 || batchID == -99999) {
+			cout << "\nAborted fetching Batch!\n\n";
+			return NULL;
+		}
+		key = Batch::is_ID_exist(head, batchID);
+		if (key != -1) {
+			cout << "There is a batch with ID:" << batchID << "!\nWould you like to add another batch ? (Y / N) :";
+			char* choice = fetchString("");
+			if (choice[0] == 'Y' || choice[0] == 'y') {
+				key = 1;
+			}
+			else {
+				key = 0;
+				return NULL;
+			}
+		}
+		else {
+			key = 0;
+		}
+	} while (key);
+
+	return nullptr;
 }
